@@ -50,6 +50,13 @@
 <script>
 import axios from "axios";
 
+
+//  "title"
+//  "url"
+//  "img_url"
+//  "source"
+//  "category_id"
+
 export default {
   data: function() {
     return {
@@ -80,12 +87,6 @@ export default {
           category_id: 3
         }
       ]
-      //  "title"
-      //  "url"
-      //  "img_url"
-      //  "source"
-      //  "category_id"
-
     };
   },
   methods: {
