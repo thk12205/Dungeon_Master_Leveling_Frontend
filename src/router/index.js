@@ -5,6 +5,7 @@ import About from "../views/About.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import Profile from "../views/Profile.vue";
 
 Vue.use(VueRouter);
 
@@ -40,6 +41,11 @@ const routes = [
     path: "/logout", 
     name: "Logout", 
     component: Logout 
+  },
+  {
+    path: "/profile", 
+    name: "Profile", 
+    component: Profile 
   },
 ];
 
