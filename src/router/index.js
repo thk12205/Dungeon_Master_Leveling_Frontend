@@ -6,6 +6,7 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import Profile from "../views/Profile.vue";
+import CategoriesShow from "../views/CategoriesShow"
 
 Vue.use(VueRouter);
 
@@ -47,6 +48,11 @@ const routes = [
     name: "Profile", 
     component: Profile 
   },
+  {
+    path: "/categories/:id", 
+    name: "Categories-show", 
+    component: CategoriesShow
+  }
 ];
 
 const router = new VueRouter({

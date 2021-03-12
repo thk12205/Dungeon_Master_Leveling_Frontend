@@ -1,8 +1,6 @@
 // Profile View Page
-
-
 <template>
-  <div class="login">
+  <div class="profile">
     <form v-on:submit.prevent="submit()">
       <h1>Profile</h1>
 
