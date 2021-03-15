@@ -2,95 +2,26 @@
   <div class="home">
     <h1>Dungeon Master Leveling!!</h1>
 
-    <h4>STR</h4>
-    <button>IMG Link</button><br />
-    // sort by category_id:1 (STR)
-    <div v-for="article in articles" v-bind:key="article.id">
-      <div v-if="article.category_id == 1">
-        <h5>{{ article.title }}</h5>
-        url: {{ article.url }} <br />
-        img_url: {{ article.img_url }} <br />
-        source: {{ article.source }} <br />
-        category_id: {{ article.category_id }} <br />
-        upvotes_total: {{ article.upvotes_total }} <br />
-        upvoted: {{ article.upvoted }} <br />
-        <br />
+    <div v-for="category in categories" v-bind:key="category.id">
+      <h4>{{ category.name }}</h4>
+      <!-- CHANGE: put button into img later -->
+      <h4>================</h4>
+      <button>IMG Link</button><br />
+      <div v-for="article in articles" v-bind:key="article.id">
+        <div v-if="article.category_id == category.id">
+          <h5>{{ article.title }}</h5>
+          <button href="article.url">link to article</button> <br />
+          <!-- CHANGE: put button into img later -->
+          url: {{ article.url }} <br />
+          img: <img src="article.img_url" alt="" /> <br />
+          img_url: {{ article.img_url }} <br />
+          source: {{ article.source }} <br />
+          category_id: {{ article.category_id }} <br />
+          upvotes_total: {{ article.upvotes_total }} <br />
+          upvoted: {{ article.upvoted }} <br />
+          <br />
+        </div>
       </div>
-    </div>
-
-    <h4>CON</h4>
-    <button>IMG Link</button><br />
-    // sort by category_id:2 (CON)
-    <div v-for="article in articles" v-bind:key="article.id">
-      <h5>{{ article.title }}</h5>
-      url: {{ article.url }} <br />
-      <img src="article.img_url" alt="" />
-      img_url: {{ article.img_url }} <br />
-      source: {{ article.source }} <br />
-      category_id: {{ article.category_id }} <br />
-      upvotes_total: {{ article.upvotes_total }} <br />
-      upvoted: {{ article.upvoted }} <br />
-      <br />
-    </div>
-
-    <h4>DEX</h4>
-    <button>IMG Link</button><br />
-    // sort by category_id:3 (DEX)
-    <div v-for="article in articles" v-bind:key="article.id">
-      <h5>{{ article.title }}</h5>
-      url: {{ article.url }} <br />
-      <img src="article.img_url" alt="" />
-      img_url: {{ article.img_url }} <br />
-      source: {{ article.source }} <br />
-      category_id: {{ article.category_id }} <br />
-      upvotes_total: {{ article.upvotes_total }} <br />
-      upvoted: {{ article.upvoted }} <br />
-      <br />
-    </div>
-
-    <h4>INT</h4>
-    <button>IMG Link</button><br />
-    // sort by category_id:4 (INT)
-    <div v-for="article in articles" v-bind:key="article.id">
-      <h5>{{ article.title }}</h5>
-      url: {{ article.url }} <br />
-      <img src="article.img_url" alt="" />
-      img_url: {{ article.img_url }} <br />
-      source: {{ article.source }} <br />
-      category_id: {{ article.category_id }} <br />
-      upvotes_total: {{ article.upvotes_total }} <br />
-      upvoted: {{ article.upvoted }} <br />
-      <br />
-    </div>
-
-    <h4>WIS</h4>
-    <button>IMG Link</button><br />
-    // sort by category_id:5 (WIS)
-    <div v-for="article in articles" v-bind:key="article.id">
-      <h5>{{ article.title }}</h5>
-      url: {{ article.url }} <br />
-      <img src="article.img_url" alt="" />
-      img_url: {{ article.img_url }} <br />
-      source: {{ article.source }} <br />
-      category_id: {{ article.category_id }} <br />
-      upvotes_total: {{ article.upvotes_total }} <br />
-      upvoted: {{ article.upvoted }} <br />
-      <br />
-    </div>
-
-    <h4>CHA</h4>
-    <button>IMG Link</button><br />
-    // sort by category_id:6 (CHA)
-    <div v-for="article in articles" v-bind:key="article.id">
-      <h5>{{ article.title }}</h5>
-      url: {{ article.url }} <br />
-      <img src="article.img_url" alt="" />
-      img_url: {{ article.img_url }} <br />
-      source: {{ article.source }} <br />
-      category_id: {{ article.category_id }} <br />
-      upvotes_total: {{ article.upvotes_total }} <br />
-      upvoted: {{ article.upvoted }} <br />
-      <br />
     </div>
   </div>
 </template>

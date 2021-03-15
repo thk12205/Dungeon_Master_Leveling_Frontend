@@ -1,7 +1,7 @@
 <template>
   <div class="categories-show">
-    <h1>Strength</h1>
-    <h3>Monsters, Combat, Challenges</h3>
+    <h1>{{ category.name }}</h1>
+    <h3>{{ category.description }}</h3>
 
     <h4>Order By:</h4>
 
