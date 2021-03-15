@@ -13,6 +13,7 @@
     <h4>Articles</h4>
 
     <div v-for="article in articles" v-bind:key="article.id">
+      id: {{ article.id }} <br />
       title: {{ article.title }} <br />
       url: {{ article.url }} <br />
       img_url: {{ article.img_url }} <br />
@@ -28,42 +29,28 @@
 <style></style>
 
 <script>
+import axios from "axios";
+
 export default {
   data: function() {
     return {
-      // Hard coded articles
-      articles: [
-        {
-          title: "title1",
-          url: "url1",
-          img_url: "img_url1",
-          source: "source1",
-          category_id: 1,
-          upvotes_total: 25,
-          upvoted: true,
-        },
-        {
-          title: "title2",
-          url: "url2",
-          img_url: "img_url2",
-          source: "source2",
-          category_id: 2,
-          upvotes_total: 30,
-          upvoted: false,
-        },
-        {
-          title: "title3",
-          url: "url3",
-          img_url: "img_url3",
-          source: "source3",
-          category_id: 3,
-          upvotes_total: 50,
-          upvoted: false,
-        },
-      ],
+      category: [],
+      articles: [],
     };
   },
-  created: function() {},
+  created: function() {
+    axios.get(`/api/categories/${this.$route.params.id}`).then((response) => {
+      console.log(response.data);
+      this.category = response.data;
+      // loop through categories, reference articles key, =+ to array
+      this.articles = this.category.articles;
+
+      console.log("Category = ");
+      console.log(this.category);
+      console.log("Articles = ");
+      console.log(this.articles);
+    });
+  },
   methods: {},
 };
 </script>

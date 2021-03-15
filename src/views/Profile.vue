@@ -26,6 +26,7 @@
       <h4>Articles</h4>
 
       <div v-for="article in articles" v-bind:key="article.id">
+        id: {{ article.id }} <br />
         title: {{ article.title }} <br />
         url: {{ article.url }} <br />
         img_url: {{ article.img_url }} <br />
@@ -61,33 +62,23 @@ export default {
       password: "",
       errors: [],
       // Hard coded articles
-      articles: [
-        {
-          title: "title1",
-          url: "url1",
-          img_url: "img_url1",
-          source: "source1",
-          category_id: 1,
-          upvotes_total: 25,
-        },
-        {
-          title: "title2",
-          url: "url2",
-          img_url: "img_url2",
-          source: "source2",
-          category_id: 2,
-          upvotes_total: 30,
-        },
-        {
-          title: "title3",
-          url: "url3",
-          img_url: "img_url3",
-          source: "source3",
-          category_id: 3,
-          upvotes_total: 50,
-        },
-      ],
+      user: [],
+      articles: [],
     };
+  },
+  created: function() {
+    // axios.get(`/api/users/${this.$route.params.id}`).then((response) => {
+    axios.get(`/api/users/${1}`).then((response) => {
+      console.log(response.data);
+      this.user = response.data;
+      // loop through categories, reference articles key, =+ to array
+      this.articles = this.user.articles;
+
+      console.log("User = ");
+      console.log(this.user);
+      console.log("Articles = ");
+      console.log(this.articles);
+    });
   },
   methods: {
     submit: function() {
