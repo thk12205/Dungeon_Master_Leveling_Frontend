@@ -10,15 +10,43 @@
       <div v-for="article in articles" v-bind:key="article.id">
         <div v-if="article.category_id == category.id">
           <h5>{{ article.title }}</h5>
-          <button href="article.url">link to article</button> <br />
+          article_id: {{ article.id }} <br />
+          <form :action="article.url">
+            <input type="submit" value="link to article" />
+          </form>
+          <br />
           <!-- CHANGE: put button into img later -->
           url: {{ article.url }} <br />
-          img: <img src="article.img_url" alt="" /> <br />
-          img_url: {{ article.img_url }} <br />
+          <img
+            :src="article.img_url"
+            style="height:300px;max-width:500px"
+            alt=""
+          />
+          <br />
           source: {{ article.source }} <br />
           category_id: {{ article.category_id }} <br />
           upvotes_total: {{ article.upvotes_total }} <br />
+          <!-- CHANGE: put button into img later -->
+          <!-- <img
+            src="https://icon-library.com/images/small-thumbs-up-icon/small-thumbs-up-icon-16.jpg"
+            alt=""
+          /> -->
+
+          <button v-on:click="createUpvote(article.id)">
+            Thumbs Up (see-through)
+          </button>
+          <br />
+          <button v-on:click="destroyUpvote(article.id)">
+            Thumbs Down (opaque)
+          </button>
+          <br />
+          <!-- ADD: if article.upvoted == false, v-on:click createUpvote(), -->
+          <!-- ADD: if article.upvoted == true, v-on:click destroyUpvote(), -->
+          <!-- ADD: v-on:click fade out img -->
+          <!-- ADD: article.upvoted = !article.upvoted -->
           upvoted: {{ article.upvoted }} <br />
+          upvote_id: {{ article.upvote_id }} debug value <br />
+
           <br />
         </div>
       </div>
@@ -61,13 +89,24 @@ export default {
       console.log(this.articles);
     });
   },
-  methods: {},
+  methods: {
+    createUpvote: function(article_id_var) {
+      var params = {
+        article_id: article_id_var,
+        // user_id is set in backend create function as current_user.id, derived from the session jwt
+      };
+      axios.post("/api/upvotes", params).then((response) => {
+        console.log(response.data);
+      });
+      // .catch((error) => {
+      //   this.errors = error.response.data.errors;
+      //   this.status = error.response.status;
+      // });
+    },
+    destroyUpvote: function(upvote_id) {
+      console.log("destroyUpdate ran!!!!!!!!!");
+      axios.delete(`/api/upvotes/${upvote_id}`);
+    },
+  },
 };
 </script>
-
-// articles: [ // { // title: "title1", // url: "url1", // img_url: "img_url1",
-// source: "source1", // category_id: 1, // upvotes_total: 25, // upvoted: true,
-// }, // { // title: "title2", // url: "url2", // img_url: "img_url2", //
-source: "source2", // category_id: 2, // upvoted: false, // }, // { // title:
-"title3", // url: "url3", // img_url: "img_url3", // source: "source3", //
-category_id: 3, // upvoted: false, // }, // ],

@@ -3,9 +3,9 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/signup">Signup</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/logout">Logout</router-link> |
+      <router-link v-if="!loggedIn()" to="/login">Login</router-link> |
+      <router-link v-if="!loggedIn()" to="/signup">Sign Up</router-link> |
+      <router-link v-if="loggedIn()" to="/logout">Logout</router-link> |
       <router-link to="/profile">Profile</router-link> |
     </div>
     <router-view />
@@ -34,3 +34,21 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  data: function() {
+    return {};
+  },
+  methods: {
+    loggedIn: function() {
+      return localStorage.jwt;
+    },
+    getUserID: function() {
+      console.log("SANITY TEST: USER ID IS...");
+      console.log(localStorage.user_id);
+      return localStorage.user_id;
+    },
+  },
+};
+</script>

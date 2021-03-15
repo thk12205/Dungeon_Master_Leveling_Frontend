@@ -29,7 +29,7 @@
         id: {{ article.id }} <br />
         title: {{ article.title }} <br />
         url: {{ article.url }} <br />
-        img_url: {{ article.img_url }} <br />
+        <img :src="article.img_url" alt="" /> <br />
         source: {{ article.source }} <br />
         category_id: {{ article.category_id }} <br />
         upvotes_total: {{ article.upvotes_total }} <br />
