@@ -37,8 +37,8 @@
               <button
                 v-on:click="
                   createUpvote(article.id);
-                  articles.upvoted = true;
-                  articles.upvotes_total += 1;
+                  article.upvoted = true;
+                  article.upvotes_total += 1;
                 "
               >
                 Thumbs Up (see-through)
@@ -49,7 +49,7 @@
                 v-on:click="
                   destroyUpvote(article.id);
                   article.upvoted = false;
-                  articles.upvotes_total -= 1;
+                  article.upvotes_total -= 1;
                 "
               >
                 Thumbs Down (opaque)
