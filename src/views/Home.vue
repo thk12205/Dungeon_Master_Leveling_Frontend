@@ -2,6 +2,7 @@
   <div class="home">
     <h1>Dungeon Master Leveling!!</h1>
 
+    <button v-if="$parent.loggedIn()"></button>
     <div v-for="category in categories" v-bind:key="category.id">
       <h4>{{ category.name }}</h4>
       <!-- CHANGE: put button into img later -->
@@ -31,14 +32,15 @@
             src="https://icon-library.com/images/small-thumbs-up-icon/small-thumbs-up-icon-16.jpg"
             alt=""
           /> -->
+          <div v-if="$parent.loggedIn()">
+            <button v-on:click="createUpvote(article.id)">
+              Thumbs Up (see-through)
+            </button>
+            <button v-on:click="destroyUpvote(article.id)">
+              Thumbs Down (opaque)
+            </button>
+          </div>
 
-          <button v-on:click="createUpvote(article.id)">
-            Thumbs Up (see-through)
-          </button>
-          <br />
-          <button v-on:click="destroyUpvote(article.id)">
-            Thumbs Down (opaque)
-          </button>
           <br />
           <!-- ADD: if article.upvoted == false, v-on:click createUpvote(), -->
           <!-- ADD: if article.upvoted == true, v-on:click destroyUpvote(), -->

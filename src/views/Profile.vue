@@ -26,10 +26,18 @@
       <h4>Articles</h4>
 
       <div v-for="article in articles" v-bind:key="article.id">
-        id: {{ article.id }} <br />
+        article_id: {{ article.id }} <br />
         title: {{ article.title }} <br />
+        <form :action="article.url">
+          <input type="submit" value="link to article" />
+        </form>
         url: {{ article.url }} <br />
-        <img :src="article.img_url" alt="" /> <br />
+        <img
+          :src="article.img_url"
+          style="height:300px;max-width:500px"
+          alt=""
+        />
+        <br />
         source: {{ article.source }} <br />
         category_id: {{ article.category_id }} <br />
         upvotes_total: {{ article.upvotes_total }} <br />

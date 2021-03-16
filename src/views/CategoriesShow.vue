@@ -16,7 +16,10 @@
       id: {{ article.id }} <br />
       title: {{ article.title }} <br />
       url: {{ article.url }} <br />
-      <img :src="article.img_url" alt="" /> <br />
+      <form :action="article.url">
+        <input type="submit" value="link to article" />
+      </form>
+      <img :src="article.img_url" style="height:300px;max-width:500px" alt="" /> <br />
       source: {{ article.source }} <br />
       category_id: {{ article.category_id }} <br />
       upvotes_total: {{ article.upvotes_total }} <br />
