@@ -5,26 +5,21 @@
     <div v-for="category in categories" v-bind:key="category.id">
       <h4>{{ category.name }}</h4>
       <!-- CHANGE: put button into img later -->
-      <h4>================</h4>
-      <button>IMG Link</button><br />
+      <button>Link to Category Page for {{ category.name }}</button><br />
+      <h4>===========================</h4>
       <div v-for="article in articles" v-bind:key="article.id">
         <div v-if="article.category_id == category.id">
-          <h5>{{ article.title }}</h5>
-          article_id: {{ article.id }} <br />
-          <form :action="article.url">
-            <input type="submit" value="link to article" />
-          </form>
-          <br />
+          <h4>{{ article.title }}</h4>
           <!-- CHANGE: put button into img later -->
-          url: {{ article.url }} <br />
-          <img
-            :src="article.img_url"
-            style="height:300px;max-width:500px"
-            alt=""
-          />
+          <a :href="article.url">
+            <img
+              :src="article.img_url"
+              style="height:300px;max-width:500px"
+              alt=""
+            />
+          </a>
           <br />
           source: {{ article.source }} <br />
-          category_id: {{ article.category_id }} <br />
           upvotes_total: {{ article.upvotes_total }} <br />
           <!-- CHANGE: put button into img later -->
           <!-- <img
@@ -32,7 +27,6 @@
             alt=""
           /> -->
           <div v-if="$parent.loggedIn()">
-            upvoted: {{ article.upvoted }} <br />
             <div v-if="!article.upvoted">
               <button
                 v-on:click="
@@ -58,11 +52,6 @@
           </div>
 
           <br />
-          <!-- ADD: if article.upvoted == false, v-on:click createUpvote(), -->
-          <!-- ADD: if article.upvoted == true, v-on:click destroyUpvote(), -->
-          <!-- ADD: v-on:click fade out img -->
-          <!-- ADD: article.upvoted = !article.upvoted -->
-
           <br />
         </div>
       </div>

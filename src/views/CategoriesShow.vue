@@ -99,6 +99,24 @@ export default {
       console.log(this.articles);
     });
   },
-  methods: {},
+  methods: {
+    createUpvote: function(article_id_var) {
+      var params = {
+        article_id: article_id_var,
+        // user_id is set in backend create function as current_user.id, derived from the session jwt
+      };
+      axios.post("/api/upvotes", params).then((response) => {
+        console.log(response.data);
+      });
+      // .catch((error) => {
+      //   this.errors = error.response.data.errors;
+      //   this.status = error.response.status;
+      // });
+    },
+    destroyUpvote: function(upvote_id) {
+      console.log("destroyUpdate ran!!!!!!!!!");
+      axios.delete(`/api/upvotes/${upvote_id}`);
+    },
+  },
 };
 </script>
