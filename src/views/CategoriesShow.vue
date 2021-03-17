@@ -51,18 +51,49 @@
       )"
       v-bind:key="article.id"
     >
-      id: {{ article.id }} <br />
-      title: {{ article.title }} <br />
-      url: {{ article.url }} <br />
-      <form :action="article.url">
-        <input type="submit" value="link to article" />
-      </form>
-      <img :src="article.img_url" style="height:300px;max-width:500px" alt="" />
+      <h4>{{ article.title }}</h4>
+      <!-- CHANGE: put button into img later -->
+      <a :href="article.url">
+        <img
+          :src="article.img_url"
+          style="height:300px;max-width:500px"
+          alt=""
+        />
+      </a>
       <br />
       source: {{ article.source }} <br />
-      category_id: {{ article.category_id }} <br />
       upvotes_total: {{ article.upvotes_total }} <br />
-      upvoted: {{ article.upvoted }} <br />
+      <!-- CHANGE: put button into img later -->
+      <!-- <img
+            src="https://icon-library.com/images/small-thumbs-up-icon/small-thumbs-up-icon-16.jpg"
+            alt=""
+          /> -->
+      <div v-if="$parent.loggedIn()">
+        <div v-if="!article.upvoted">
+          <button
+            v-on:click="
+              createUpvote(article.id);
+              article.upvoted = true;
+              article.upvotes_total += 1;
+            "
+          >
+            Thumbs Up (see-through)
+          </button>
+        </div>
+        <div v-if="article.upvoted">
+          <button
+            v-on:click="
+              destroyUpvote(article.id);
+              article.upvoted = false;
+              article.upvotes_total -= 1;
+            "
+          >
+            Thumbs Down (opaque)
+          </button>
+        </div>
+      </div>
+
+      <br />
       <br />
     </div>
   </div>
