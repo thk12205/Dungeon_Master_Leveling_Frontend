@@ -7,7 +7,10 @@
       <router-link v-if="!loggedIn()" to="/signup">Sign Up</router-link> |
       <router-link v-if="loggedIn()" to="/logout">Logout</router-link> |
       <router-link v-if="loggedIn()" to="/profile">Profile</router-link> |
-      current_user.id:
+      <router-link v-if="loggedIn()" to="/articles/new"
+        >New Article</router-link
+      >
+      | current_user.id:
       {{ getUserID() }}
     </div>
     <router-view />

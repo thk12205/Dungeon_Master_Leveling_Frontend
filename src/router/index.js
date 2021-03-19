@@ -8,6 +8,9 @@ import Logout from "../views/Logout.vue";
 import Profile from "../views/Profile.vue";
 import ProfileEdit from "../views/ProfileEdit.vue"
 import CategoriesShow from "../views/CategoriesShow.vue"
+import ArticlesNew from "../views/ArticlesNew.vue"
+import ArticlesShow from "../views/ArticlesShow.vue"
+import ArticlesEdit from "../views/ArticlesEdit.vue"
 
 Vue.use(VueRouter);
 
@@ -56,8 +59,23 @@ const routes = [
   },
   {
     path: "/categories/:id", 
-    name: "Categories-show", 
+    name: "CategoriesShow", 
     component: CategoriesShow
+  },
+  {
+    path: "/articles/new",
+    name: "articlesNew",
+    component: ArticlesNew
+  },
+  {
+    path: "/articles/:id",
+    name: "articlesShow",
+    component: ArticlesShow
+  },
+  {
+    path: "/articles/:id/edit",
+    name: "articlesEdit",
+    component: ArticlesEdit
   }
 ];
 
