@@ -6,7 +6,9 @@
       <router-link v-if="!loggedIn()" to="/login">Login</router-link> |
       <router-link v-if="!loggedIn()" to="/signup">Sign Up</router-link> |
       <router-link v-if="loggedIn()" to="/logout">Logout</router-link> |
-      <router-link to="/profile">Profile</router-link> |
+      <router-link v-if="loggedIn()" to="/profile">Profile</router-link> |
+      current_user.id:
+      {{ getUserID() }}
     </div>
     <router-view />
   </div>
@@ -45,8 +47,8 @@ export default {
       return localStorage.jwt;
     },
     getUserID: function() {
-      console.log("SANITY TEST: USER ID IS...");
-      console.log(localStorage.user_id);
+      console.log("SANITY TEST: localStorage =");
+      console.log(localStorage);
       return localStorage.user_id;
     },
   },

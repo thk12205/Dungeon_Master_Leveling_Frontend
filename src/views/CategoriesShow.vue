@@ -7,7 +7,7 @@
     <button
       v-on:click="
         orderByFilter = 'upvotes_total';
-        reverseFilter = 1;
+        reverseFilter = -1;
       "
     >
       Score
@@ -28,24 +28,35 @@
     >
       Sources
     </button>
-    <button v-on:click="reverseFilter = -1">
+    <button v-on:click="reverseFilterToggle()">
       Reverse Order
     </button>
 
-    <div class="form-group">
-      <label>Title Filter: </label>
-      <input
-        class="form-control"
-        v-model="titleFilter"
-        placeholder="Search by Title"
-      />
-    </div>
+    <br />
+    Title Filter:
+    <input
+      class="form-control"
+      v-model="titleFilter"
+      placeholder="Search by Title"
+    />
+    <br />
+    Source Filter:
+    <input
+      class="form-control"
+      v-model="sourceFilter"
+      placeholder="Search by Source"
+    />
+    <br />
 
     <h4>Articles</h4>
 
     <div
       v-for="article in orderBy(
-        filterBy(articles, titleFilter, 'title'),
+        filterBy(
+          filterBy(articles, titleFilter, 'title'),
+          sourceFilter,
+          'source'
+        ),
         orderByFilter,
         reverseFilter
       )"
@@ -53,7 +64,7 @@
     >
       <h4>{{ article.title }}</h4>
       <!-- CHANGE: put button into img later -->
-      <a :href="article.url">
+      <a :href="article.url" target="_blank">
         <img
           :src="article.img_url"
           style="height:300px;max-width:500px"
@@ -112,9 +123,9 @@ export default {
       category: [],
       articles: [],
       titleFilter: "",
-      orderByFilter: "",
       sourceFilter: "",
-      reverseFilter: 0, //flips the filter
+      orderByFilter: "id",
+      reverseFilter: 1, //flips the filter
     };
   },
   created: function() {
@@ -147,6 +158,13 @@ export default {
     destroyUpvote: function(upvote_id) {
       console.log("destroyUpdate ran!!!!!!!!!");
       axios.delete(`/api/upvotes/${upvote_id}`);
+    },
+    reverseFilterToggle() {
+      if (this.reverseFilter === 1) {
+        this.reverseFilter = -1;
+      } else {
+        this.reverseFilter = 1;
+      }
     },
   },
 };

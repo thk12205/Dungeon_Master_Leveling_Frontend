@@ -8,22 +8,26 @@
         </li>
       </ul>
       <div class="form-group">
-        <label>Name:</label> 
-        <input type="text" class="form-control" v-model="name">
+        <label>Name:</label>
+        <input type="text" class="form-control" v-model="name" />
       </div>
       <div class="form-group">
         <label>Email:</label>
-        <input type="email" class="form-control" v-model="email">
+        <input type="email" class="form-control" v-model="email" />
       </div>
       <div class="form-group">
         <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
+        <input type="password" class="form-control" v-model="password" />
       </div>
       <div class="form-group">
         <label>Password confirmation:</label>
-        <input type="password" class="form-control" v-model="passwordConfirmation">
+        <input
+          type="password"
+          class="form-control"
+          v-model="passwordConfirmation"
+        />
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
+      <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
   </div>
 </template>
@@ -38,27 +42,27 @@ export default {
       email: "",
       password: "",
       passwordConfirmation: "",
-      errors: []
+      errors: [],
     };
   },
   methods: {
     submit: function() {
       var params = {
-        name: this.name,
+        username: this.name,
         email: this.email,
         password: this.password,
-        password_confirmation: this.passwordConfirmation
+        password_confirmation: this.passwordConfirmation,
       };
       axios
         .post("/api/users", params)
-        .then(response => {
+        .then((response) => {
           console.log(response.data);
           this.$router.push("/login");
         })
-        .catch(error => {
+        .catch((error) => {
           this.errors = error.response.data.errors;
         });
-    }
-  }
+    },
+  },
 };
 </script>

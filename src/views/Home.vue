@@ -5,7 +5,14 @@
     <div v-for="category in categories" v-bind:key="category.id">
       <h4>{{ category.name }}</h4>
       <!-- CHANGE: put button into img later -->
-      <button>Link to Category Page for {{ category.name }}</button><br />
+
+      <router-link :to="`/categories/${category.id}`"
+        ><button>
+          Link to Category Page for {{ category.name }}
+        </button></router-link
+      >
+      <img :src="category.img_url" alt="" />
+      <br />
       <h4>===========================</h4>
       <div v-for="article in articles" v-bind:key="article.id">
         <div v-if="article.category_id == category.id">
@@ -28,24 +35,12 @@
           /> -->
           <div v-if="$parent.loggedIn()">
             <div v-if="!article.upvoted">
-              <button
-                v-on:click="
-                  createUpvote(article.id);
-                  article.upvoted = true;
-                  article.upvotes_total += 1;
-                "
-              >
+              <button v-on:click="createUpvote(article)">
                 Thumbs Up (see-through)
               </button>
             </div>
             <div v-if="article.upvoted">
-              <button
-                v-on:click="
-                  destroyUpvote(article.id);
-                  article.upvoted = false;
-                  article.upvotes_total -= 1;
-                "
-              >
+              <button v-on:click="destroyUpvote(article)">
                 Thumbs Down (opaque)
               </button>
             </div>
@@ -95,22 +90,28 @@ export default {
     });
   },
   methods: {
-    createUpvote: function(article_id_var) {
+    createUpvote: function(article) {
       var params = {
-        article_id: article_id_var,
+        article_id: article.id,
         // user_id is set in backend create function as current_user.id, derived from the session jwt
       };
       axios.post("/api/upvotes", params).then((response) => {
         console.log(response.data);
+        article.upvoted = true;
+        article.upvotes_total++;
       });
       // .catch((error) => {
       //   this.errors = error.response.data.errors;
       //   this.status = error.response.status;
       // });
     },
-    destroyUpvote: function(upvote_id) {
+    destroyUpvote: function(article) {
       console.log("destroyUpdate ran!!!!!!!!!");
-      axios.delete(`/api/upvotes/${upvote_id}`);
+      axios.delete(`/api/upvotes/${article.id}`).then((response) => {
+        console.log(response.data);
+        article.upvoted = false;
+        article.upvotes_total--;
+      });
     },
   },
 };

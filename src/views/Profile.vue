@@ -3,28 +3,87 @@
   <div class="profile">
     <h1>Profile</h1>
 
-    <h4>Username: {{ username }}</h4>
+    <h4>Username: {{ user.username }}</h4>
+
+    <router-link :to="`/profile/${user.id}/edit`"
+      ><button>Edit Profile</button></router-link
+    >
+    <br />
 
     <h4>Articles Read</h4>
 
-    <button>All</button>
-    <button>STR</button>
-    <button>CON</button>
-    <button>DEX</button>
-    <button>INT</button>
-    <button>WIS</button>
-    <button>CHA</button>
+    <button v-on:click="categoryFilter = ''">All</button>
+    <button v-on:click="categoryFilter = 1">STR</button>
+    <button v-on:click="categoryFilter = 2">CON</button>
+    <button v-on:click="categoryFilter = 3">DEX</button>
+    <button v-on:click="categoryFilter = 4">INT</button>
+    <button v-on:click="categoryFilter = 5">WIS</button>
+    <button v-on:click="categoryFilter = 6">CHA</button>
 
     <h4>Order By:</h4>
 
-    <button>Score</button>
-    <button>Reverse Score</button>
-    <button>Name</button>
-    <button>Sources</button>
+    <button
+      v-on:click="
+        orderByFilter = 'upvotes_total';
+        reverseFilter = -1;
+      "
+    >
+      Score
+    </button>
+    <button
+      v-on:click="
+        orderByFilter = 'title';
+        reverseFilter = 1;
+      "
+    >
+      Title
+    </button>
+    <button
+      v-on:click="
+        orderByFilter = 'source';
+        reverseFilter = 1;
+      "
+    >
+      Sources
+    </button>
+    <button v-on:click="reverseFilterToggle()">
+      Reverse Order
+    </button>
+    <br />
+    <br />
+    Title Filter:
+    <input
+      class="form-control"
+      v-model="titleFilter"
+      placeholder="Search by Title"
+    />
+    <br />
+    Source Filter:
+    <input
+      class="form-control"
+      v-model="sourceFilter"
+      placeholder="Search by Source"
+    />
+    <br />
 
     <h4>Articles</h4>
 
-    <div v-for="article in articles" v-bind:key="article.id">
+    <div
+      v-for="article in orderBy(
+        filterBy(
+          filterBy(
+            filterBy(articles, titleFilter, 'title'),
+            categoryFilter,
+            'category_id'
+          ),
+          sourceFilter,
+          'source'
+        ),
+        orderByFilter,
+        reverseFilter
+      )"
+      v-bind:key="article.id"
+    >
       <h4>{{ article.title }}</h4>
       <!-- CHANGE: put button into img later -->
       <a :href="article.url">
@@ -81,6 +140,7 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
 
 //  "title"
 //  "url"
@@ -89,6 +149,7 @@ import axios from "axios";
 //  "category_id"
 
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function() {
     return {
       email: "",
@@ -97,6 +158,11 @@ export default {
       // Hard coded articles
       user: [],
       articles: [],
+      titleFilter: "",
+      sourceFilter: "",
+      categoryFilter: "",
+      orderByFilter: "id",
+      reverseFilter: 1, //flips the filter
     };
   },
   created: function() {
@@ -130,6 +196,13 @@ export default {
     destroyUpvote: function(upvote_id) {
       console.log("destroyUpdate ran!!!!!!!!!");
       axios.delete(`/api/upvotes/${upvote_id}`);
+    },
+    reverseFilterToggle() {
+      if (this.reverseFilter === 1) {
+        this.reverseFilter = -1;
+      } else {
+        this.reverseFilter = 1;
+      }
     },
   },
 };
