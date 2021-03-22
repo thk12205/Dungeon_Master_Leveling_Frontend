@@ -50,8 +50,6 @@ export default {
       return localStorage.jwt;
     },
     getUserID: function() {
-      console.log("SANITY TEST: localStorage =");
-      console.log(localStorage);
       return localStorage.getItem("user_id");
     },
   },

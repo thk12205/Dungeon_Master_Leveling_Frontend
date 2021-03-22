@@ -1,9 +1,30 @@
 <template>
-  <div class="categories-show">
-    <h1>{{ category.name }}</h1>
-    <h3>{{ category.description }}</h3>
+  <div class="usersShow">
+    <h1>User Profile</h1>
+
+    <h4>Username: {{ user.username }}</h4>
+
+    img url: <img :src="user.img_url" alt="" />
+
+    <router-link
+      v-if="$parent.getUserID() == user.id"
+      :to="`/profile/${user.id}/edit`"
+      ><button>Edit Profile</button></router-link
+    >
+    <br />
+
+    <h4>Articles Read</h4>
+
+    <button v-on:click="categoryFilter = ''">All</button>
+    <button v-on:click="categoryFilter = 1">STR</button>
+    <button v-on:click="categoryFilter = 2">CON</button>
+    <button v-on:click="categoryFilter = 3">DEX</button>
+    <button v-on:click="categoryFilter = 4">INT</button>
+    <button v-on:click="categoryFilter = 5">WIS</button>
+    <button v-on:click="categoryFilter = 6">CHA</button>
 
     <h4>Order By:</h4>
+
     <button
       v-on:click="
         orderByFilter = 'upvotes_total';
@@ -31,7 +52,7 @@
     <button v-on:click="reverseFilterToggle()">
       Reverse Order
     </button>
-
+    <br />
     <br />
     Title Filter:
     <input
@@ -53,7 +74,11 @@
     <div
       v-for="article in orderBy(
         filterBy(
-          filterBy(articles, titleFilter, 'title'),
+          filterBy(
+            filterBy(articles, titleFilter, 'title'),
+            categoryFilter,
+            'category_id'
+          ),
           sourceFilter,
           'source'
         ),
@@ -68,7 +93,7 @@
         ><img :src="article.img_url" style="height:300px;max-width:500px" alt=""
       /></router-link>
       <br />
-      <!-- <a :href="article.url" target="_blank">
+      <!-- <a :href="article.url">
         <img
           :src="article.img_url"
           style="height:300px;max-width:500px"
@@ -99,36 +124,52 @@
       <br />
       <br />
     </div>
+
+    <ul>
+      <li class="text-danger" v-for="error in errors" v-bind:key="error">
+        {{ error }}
+      </li>
+    </ul>
   </div>
 </template>
-
-<style></style>
 
 <script>
 import axios from "axios";
 import Vue2Filters from "vue2-filters";
 
+//  "title"
+//  "url"
+//  "img_url"
+//  "source"
+//  "category_id"
+
 export default {
   mixins: [Vue2Filters.mixin],
   data: function() {
     return {
-      category: [],
+      email: "",
+      password: "",
+      errors: [],
+      // Hard coded articles
+      user: [],
       articles: [],
       titleFilter: "",
       sourceFilter: "",
+      categoryFilter: "",
       orderByFilter: "id",
       reverseFilter: 1, //flips the filter
     };
   },
   created: function() {
-    axios.get(`/api/categories/${this.$route.params.slug}`).then((response) => {
+    // axios.get(`/api/users/${this.$route.params.id}`).then((response) => {
+    axios.get(`/api/users/${this.$route.params.id}`).then((response) => {
       console.log(response.data);
-      this.category = response.data;
+      this.user = response.data;
       // loop through categories, reference articles key, =+ to array
-      this.articles = this.category.articles;
+      this.articles = this.user.articles;
 
-      console.log("Category = ");
-      console.log(this.category);
+      console.log("User = ");
+      console.log(this.user);
       console.log("Articles = ");
       console.log(this.articles);
     });

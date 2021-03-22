@@ -2,8 +2,23 @@
   <div class="articlesShow">
     <h4>{{ article.title }}</h4>
     <!-- CHANGE: put button into img later -->
-    <a :href="article.url">
-      <img :src="article.img_url" style="height:300px;max-width:500px" alt="" />
+    <a :href="article.url" target="_blank">
+      <img
+        v-if="!article.video"
+        :src="article.img_url"
+        style="height:300px;max-width:500px"
+        alt=""
+      />
+      <iframe
+        v-if="article.video"
+        width="560"
+        height="315"
+        :src="`https://www.youtube.com/embed/${extractYoutubeId(article.url)}`"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </a>
     <br />
     source: {{ article.source }} <br />
@@ -61,12 +76,25 @@
 
     <div v-for="comment in comments" v-bind:key="comment.id">
       id: {{ comment.id }} <br />
-      img: <img :src="comment.user_img_url" alt="" />
+      <!-- http://localhost:8080/users/1 -->
+      <router-link :to="`/users/${comment.user_id}`">
+        img:
+        <img
+          :src="comment.user.img_url"
+          style="height:100px;max-width:100px"
+          alt=""
+        />
+      </router-link>
+
+      <router-link :to="`/users/${comment.user_id}`">
+        username: {{ comment.user.username }}
+      </router-link>
       <br />
-      username: {{ comment.username }} <br />
+
       comment: {{ comment.body }} <br />
       user_id: {{ comment.user_id }} <br />
-      created: {{ relativeDate(comment.created_at) }} <br />
+      created: {{ comment.created_at }} <br />
+      <!-- relativeDate(comment.created_at) -->
       <button
         v-if="$parent.getUserID() == comment.user_id"
         v-on:click="destroyComment(comment)"
@@ -83,7 +111,7 @@
 
 <script>
 import axios from "axios";
-import moment from "moment";
+// import moment from "moment";
 
 export default {
   data: function() {
@@ -100,7 +128,7 @@ export default {
       console.log(response.data);
       this.article = response.data;
       console.log("Comments = ");
-      this.comments = this.article.comments;
+      this.comments = this.article.comments.reverse();
       console.log(this.comments);
     });
   },
@@ -145,7 +173,7 @@ export default {
         .then((response) => {
           console.log("Comment = ");
           console.log(response.data);
-          this.comments.push(response.data);
+          this.comments.unshift(response.data);
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
@@ -168,9 +196,17 @@ export default {
         });
       }
     },
-    relativeDate: function(date) {
-      return moment(date).fromNow();
+    extractYoutubeId: function(url) {
+      var youtubeId = url
+        .split("?")[1]
+        .split("&")
+        .find((str) => str.startsWith("v="));
+      console.log(youtubeId.substring(2));
+      return youtubeId.substring(2);
     },
+    // relativeDate: function(date) {
+    //   return moment(date).fromNow();
+    // },
   },
 };
 </script>

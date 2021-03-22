@@ -6,7 +6,7 @@
       <h4>{{ category.name }}</h4>
       <!-- CHANGE: put button into img later -->
 
-      <router-link :to="`/categories/${category.id}`"
+      <router-link :to="`/categories/${category.name}`"
         ><button>
           Link to Category Page for {{ category.name }}
         </button></router-link

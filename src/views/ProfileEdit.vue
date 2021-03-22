@@ -8,6 +8,9 @@
     </ul>
     <form v-on:submit.prevent="updateUser()">
       <h1>Edit Profile Page</h1>
+
+      img url: <img :src="user.img_url" alt="" />
+
       <ul>
         <li class="text-danger" v-for="error in errors" v-bind:key="error">
           {{ error }}
@@ -20,6 +23,10 @@
       <div class="form-group">
         <label>Email:</label>
         <input type="email" class="form-control" v-model="user.email" />
+      </div>
+      <div class="form-group">
+        <label>Image URL:</label>
+        <input type="img_url" class="form-control" v-model="user.img_url" />
       </div>
       <div class="form-group">
         <label>Password:</label>
@@ -71,6 +78,7 @@ export default {
       var params = {
         username: this.user.username,
         email: this.user.email,
+        img_url: this.user.img_url,
         password: this.password,
         password_confirmation: this.passwordConfirmation,
       };

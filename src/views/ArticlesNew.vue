@@ -25,18 +25,40 @@
         <label>source:</label>
         <input type="text" class="form-control" v-model="source" />
       </div>
-      <div class="form-group">
-        <label>category_id(1-6: STR,CON,DEX,INT,WIS,CHA):</label>
-        <input type="text" class="form-control" v-model="category_id" />
-      </div>
+      <label for="category">category:</label>
+      <select name="category" id="category" v-model="category_id">
+        <option value="1">STR - Monsters, Combat, Challenges</option>
+        <option value="2">DEX - Improvization and Organization </option>
+        <option value="3">CON - World Building and Plot</option>
+        <option value="4">INT - Rules, Gold, and Balance</option>
+        <option value="5">WIS - Player Management</option>
+        <option value="6">CHA - Characters: The Good, The Bad, The Ugly</option>
+      </select>
+
       <div class="form-group">
         <label>body:</label>
         <input type="text" class="form-control" v-model="body" />
       </div>
       <div class="form-group">
         <label>video(true/false):</label>
-        <input type="text" class="form-control" v-model="video" />
+        <input
+          type="radio"
+          id="yes"
+          name="video"
+          value="true"
+          v-model="video"
+        />
+        <label for="yes">Yes</label>
+        <input
+          type="radio"
+          id="no"
+          name="video"
+          value="false"
+          v-model="video"
+        />
+        <label for="no">No</label><br />
       </div>
+
       <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
   </div>
@@ -63,10 +85,11 @@ export default {
       source: "",
       category_id: "",
       body: "",
-      video: "",
+      video: false,
       errors: [],
       status: "",
       article: "",
+      url: "",
     };
   },
   methods: {
@@ -78,6 +101,7 @@ export default {
         category_id: this.category_id,
         body: this.body,
         video: this.video,
+        url: this.url,
       };
       axios
         .post("/api/articles", params)

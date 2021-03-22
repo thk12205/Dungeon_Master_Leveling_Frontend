@@ -11,6 +11,8 @@ import CategoriesShow from "../views/CategoriesShow.vue"
 import ArticlesNew from "../views/ArticlesNew.vue"
 import ArticlesShow from "../views/ArticlesShow.vue"
 import ArticlesEdit from "../views/ArticlesEdit.vue"
+import UsersShow from "../views/UsersShow.vue"
+
 
 Vue.use(VueRouter);
 
@@ -58,7 +60,7 @@ const routes = [
     component: ProfileEdit
   },
   {
-    path: "/categories/:id", 
+    path: "/categories/:slug", 
     name: "CategoriesShow", 
     component: CategoriesShow
   },
@@ -76,7 +78,12 @@ const routes = [
     path: "/articles/:id/edit",
     name: "articlesEdit",
     component: ArticlesEdit
-  }
+  },
+  {
+    path: "/users/:id",
+    name: "usersShow",
+    component: UsersShow
+  },
 ];
 
 const router = new VueRouter({

@@ -1,7 +1,8 @@
-// Profile View Page
 <template>
   <div class="profile">
     <h1>Profile</h1>
+
+    img url: <br /><img :src="user.img_url" alt="" />
 
     <h4>Username: {{ user.username }}</h4>
 
