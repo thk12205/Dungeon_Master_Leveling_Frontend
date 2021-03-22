@@ -52,7 +52,7 @@ export default {
     getUserID: function() {
       console.log("SANITY TEST: localStorage =");
       console.log(localStorage);
-      return localStorage.user_id;
+      return localStorage.getItem("user_id");
     },
   },
 };

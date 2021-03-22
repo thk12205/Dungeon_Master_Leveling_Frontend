@@ -18,14 +18,21 @@
         <div v-if="article.category_id == category.id">
           <h4>{{ article.title }}</h4>
           <!-- CHANGE: put button into img later -->
-          <a :href="article.url">
+          <router-link :to="`/articles/${article.id}`"
+            ><img
+              :src="article.img_url"
+              style="height:300px;max-width:500px"
+              alt=""
+          /></router-link>
+          <br />
+          <!-- <a :href="article.url">
             <img
               :src="article.img_url"
               style="height:300px;max-width:500px"
               alt=""
             />
           </a>
-          <br />
+          <br /> -->
           source: {{ article.source }} <br />
           upvotes_total: {{ article.upvotes_total }} <br />
           <!-- CHANGE: put button into img later -->

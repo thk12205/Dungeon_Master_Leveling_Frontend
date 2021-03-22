@@ -33,9 +33,16 @@
           v-model="passwordConfirmation"
         />
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit" />
+      <input
+        type="submit"
+        v-if="user.id == $parent.getUserID()"
+        class="btn btn-primary"
+        value="Submit"
+      />
     </form>
-    <button v-on:click="destroyUser()">Delete Account</button>
+    <button v-if="user.id == $parent.getUserID()" v-on:click="destroyUser()">
+      Delete Account
+    </button>
   </div>
 </template>
 
@@ -52,7 +59,7 @@ export default {
     };
   },
   created: function() {
-    axios.get(`/api/users/${1}`).then((response) => {
+    axios.get(`/api/users/${this.$parent.getUserID()}`).then((response) => {
       console.log(response.data);
       this.user = response.data;
       console.log("User = ");

@@ -1,6 +1,6 @@
 <template>
   <div class="articlesNew">
-    <form v-on:submit.prevent="submit()">
+    <form v-on:submit.prevent="createArticle()">
       <!-- <img v-if="status" :src="`https://http.cat/${status}`" alt="" /> -->
       <h1>New Article</h1>
       <ul>
@@ -14,7 +14,7 @@
       </div>
       <div class="form-group">
         <label>url:</label>
-        <input type="text" class="form-control" v-model="body" />
+        <input type="text" class="form-control" v-model="url" />
         <br />
       </div>
       <div class="form-group">
@@ -26,7 +26,7 @@
         <input type="text" class="form-control" v-model="source" />
       </div>
       <div class="form-group">
-        <label>category_id:</label>
+        <label>category_id(1-6: STR,CON,DEX,INT,WIS,CHA):</label>
         <input type="text" class="form-control" v-model="category_id" />
       </div>
       <div class="form-group">
@@ -34,7 +34,7 @@
         <input type="text" class="form-control" v-model="body" />
       </div>
       <div class="form-group">
-        <label>video(yes/no):</label>
+        <label>video(true/false):</label>
         <input type="text" class="form-control" v-model="video" />
       </div>
       <input type="submit" class="btn btn-primary" value="Submit" />
@@ -66,23 +66,25 @@ export default {
       video: "",
       errors: [],
       status: "",
+      article: "",
     };
   },
   methods: {
-    submit: function() {
+    createArticle: function() {
       var params = {
         title: this.title,
         image: this.image,
         source: this.source,
         category_id: this.category_id,
         body: this.body,
-        video: false,
+        video: this.video,
       };
       axios
         .post("/api/articles", params)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/");
+          this.article = response.data;
+          this.$router.push(`/articles/${this.article.id}`);
         })
         .catch((error) => {
           this.errors = error.response.data.errors;

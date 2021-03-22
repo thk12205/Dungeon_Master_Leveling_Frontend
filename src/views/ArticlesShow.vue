@@ -30,7 +30,13 @@
     </div>
 
     <br />
-    <br />
+
+    <router-link
+      v-if="article.creator_id == $parent.getUserID()"
+      :to="`/articles/${article.id}/edit`"
+    >
+      <button>Edit Article</button>
+    </router-link>
   </div>
 </template>
 
