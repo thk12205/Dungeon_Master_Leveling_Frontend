@@ -66,7 +66,7 @@
       username: {{ comment.username }} <br />
       comment: {{ comment.body }} <br />
       user_id: {{ comment.user_id }} <br />
-      created_at: {{ comment.created_at }} <br />
+      created: {{ relativeDate(comment.created_at) }} <br />
       <button
         v-if="$parent.getUserID() == comment.user_id"
         v-on:click="destroyComment(comment)"
@@ -83,6 +83,8 @@
 
 <script>
 import axios from "axios";
+import moment from "moment";
+
 export default {
   data: function() {
     return {
@@ -165,6 +167,9 @@ export default {
           }
         });
       }
+    },
+    relativeDate: function(date) {
+      return moment(date).fromNow();
     },
   },
 };
