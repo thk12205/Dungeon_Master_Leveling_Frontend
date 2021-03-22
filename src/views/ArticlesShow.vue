@@ -60,10 +60,13 @@
     <br />
 
     <div v-for="comment in comments" v-bind:key="comment.id">
-      img: <img :src="comment.user_img_url" alt="" /> <br />
+      id: {{ comment.id }} <br />
+      img: <img :src="comment.user_img_url" alt="" />
+      <br />
       username: {{ comment.username }} <br />
       comment: {{ comment.body }} <br />
       user_id: {{ comment.user_id }} <br />
+      created_at: {{ comment.created_at }} <br />
       <button
         v-if="$parent.getUserID() == comment.user_id"
         v-on:click="destroyComment(comment)"
@@ -130,9 +133,38 @@ export default {
         article.upvotes_total--;
       });
     },
-    createComment: function() {},
+    createComment: function() {
+      var params = {
+        article_id: this.article.id,
+        body: this.body,
+      };
+      axios
+        .post("/api/comments", params)
+        .then((response) => {
+          console.log("Comment = ");
+          console.log(response.data);
+          this.comments.push(response.data);
+        })
+        .catch((error) => {
+          this.errors = error.response.data.errors;
+        });
+    },
     destroyComment: function(comment) {
-      comment;
+      if (confirm("Are you sure you want to delete this comment?")) {
+        axios.delete(`/api/comments/${comment.id}`).then((response) => {
+          console.log("Deletion successful");
+          console.log(response.data);
+          console.log("Comment = ");
+          console.log(comment);
+          var index = this.comments.indexOf(comment);
+          console.log("Index = ");
+          console.log(index);
+          if (index > -1) {
+            this.comments.splice(index, 1);
+            console.log("Comment Removed");
+          }
+        });
+      }
     },
   },
 };
