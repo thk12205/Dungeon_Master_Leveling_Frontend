@@ -37,6 +37,42 @@
     >
       <button>Edit Article</button>
     </router-link>
+
+    <br />
+
+    <h3>Comments Section</h3>
+
+    <form v-if="$parent.loggedIn()" v-on:submit.prevent="createComment()">
+      <h1>Add Comment</h1>
+
+      <ul>
+        <li class="text-danger" v-for="error in errors" v-bind:key="error">
+          {{ error }}
+        </li>
+      </ul>
+      <div class="form-group">
+        (user.img_url here)
+        <label>Comment:</label>
+        <input type="text" class="form-control" v-model="body" />
+      </div>
+      <input type="submit" class="btn btn-primary" value="Submit" />
+    </form>
+    <br />
+
+    <div v-for="comment in comments" v-bind:key="comment.id">
+      img: <img :src="comment.user_img_url" alt="" /> <br />
+      username: {{ comment.username }} <br />
+      comment: {{ comment.body }} <br />
+      user_id: {{ comment.user_id }} <br />
+      <button
+        v-if="$parent.getUserID() == comment.user_id"
+        v-on:click="destroyComment(comment)"
+      >
+        Delete
+      </button>
+      <br />
+      <br />
+    </div>
   </div>
 </template>
 
@@ -48,12 +84,19 @@ export default {
   data: function() {
     return {
       article: {},
+      body: "",
+      comments: [],
+      errors: [],
     };
   },
   created: function() {
     axios.get(`/api/articles/${this.$route.params.id}`).then((response) => {
+      console.log("Article = ");
       console.log(response.data);
       this.article = response.data;
+      console.log("Comments = ");
+      this.comments = this.article.comments;
+      console.log(this.comments);
     });
   },
   methods: {
@@ -78,10 +121,6 @@ export default {
         article.upvoted = true;
         article.upvotes_total++;
       });
-      // .catch((error) => {
-      //   this.errors = error.response.data.errors;
-      //   this.status = error.response.status;
-      // });
     },
     destroyUpvote: function(article) {
       console.log("destroyUpdate ran!!!!!!!!!");
@@ -90,6 +129,10 @@ export default {
         article.upvoted = false;
         article.upvotes_total--;
       });
+    },
+    createComment: function() {},
+    destroyComment: function(comment) {
+      comment;
     },
   },
 };
