@@ -1,0 +1,639 @@
+[
+  {
+    "value": "2914",
+    "text": "Ankaran"
+  },{
+    "value": "2915",
+    "text": "Beltinci"
+  },{
+    "value": "2916",
+    "text": "Benedikt"
+  },{
+    "value": "2917",
+    "text": "Bistrica ob Sotli"
+  },{
+    "value": "2918",
+    "text": "Bloke"
+  },{
+    "value": "2919",
+    "text": "Bohinj"
+  },{
+    "value": "2920",
+    "text": "Borovnica"
+  },{
+    "value": "2921",
+    "text": "Brda"
+  },{
+    "value": "2922",
+    "text": "Brezovica"
+  },{
+    "value": "2923",
+    "text": "Cankova"
+  },{
+    "value": "2924",
+    "text": "Celje"
+  },{
+    "value": "2925",
+    "text": "Cerklje na Gorenjskem"
+  },{
+    "value": "2926",
+    "text": "Cerknica"
+  },{
+    "value": "2927",
+    "text": "Cerkno"
+  },{
+    "value": "2928",
+    "text": "Cerkvenjak"
+  },{
+    "value": "2929",
+    "text": "Cirkulane"
+  },{
+    "value": "2930",
+    "text": "Destrnik"
+  },{
+    "value": "2931",
+    "text": "Dobje"
+  },{
+    "value": "2932",
+    "text": "Dobrepolje"
+  },{
+    "value": "2933",
+    "text": "Dobrna"
+  },{
+    "value": "2934",
+    "text": "Dobrova-Polhov Gradec"
+  },{
+    "value": "2935",
+    "text": "Dobrovnik"
+  },{
+    "value": "2936",
+    "text": "Dol pri Ljubljani"
+  },{
+    "value": "2937",
+    "text": "Dolenjske Toplice"
+  },{
+    "value": "2938",
+    "text": "Dornava"
+  },{
+    "value": "2939",
+    "text": "Dravograd"
+  },{
+    "value": "2940",
+    "text": "Duplek"
+  },{
+    "value": "2941",
+    "text": "Gorenja Vas-Poljane"
+  },{
+    "value": "2942",
+    "text": "Gorje"
+  },{
+    "value": "2943",
+    "text": "Gornja Radgona"
+  },{
+    "value": "2944",
+    "text": "Gornji Grad"
+  },{
+    "value": "2945",
+    "text": "Gornji Petrovci"
+  },{
+    "value": "2946",
+    "text": "Grad"
+  },{
+    "value": "2947",
+    "text": "Grosuplje"
+  },{
+    "value": "2948",
+    "text": "Hajdina"
+  },{
+    "value": "2949",
+    "text": "Hodos"
+  },{
+    "value": "2950",
+    "text": "Horjul"
+  },{
+    "value": "2951",
+    "text": "Hrastnik"
+  },{
+    "value": "2952",
+    "text": "Hrpelje-Kozina"
+  },{
+    "value": "2953",
+    "text": "Idrija"
+  },{
+    "value": "2954",
+    "text": "Ig"
+  },{
+    "value": "2955",
+    "text": "Ilirska Bistrica"
+  },{
+    "value": "2956",
+    "text": "Izola"
+  },{
+    "value": "2957",
+    "text": "Jesenice"
+  },{
+    "value": "2958",
+    "text": "Jezersko"
+  },{
+    "value": "2959",
+    "text": "Kamnik"
+  },{
+    "value": "2960",
+    "text": "Kanal"
+  },{
+    "value": "2961",
+    "text": "Kobilje"
+  },{
+    "value": "2962",
+    "text": "Komen"
+  },{
+    "value": "2963",
+    "text": "Komenda"
+  },{
+    "value": "2964",
+    "text": "Koper"
+  },{
+    "value": "2965",
+    "text": "Kostanjevica na Krki"
+  },{
+    "value": "2966",
+    "text": "Kostel"
+  },{
+    "value": "2967",
+    "text": "Kozje"
+  },{
+    "value": "2968",
+    "text": "Kranj"
+  },{
+    "value": "2969",
+    "text": "Kranjska Gora"
+  },{
+    "value": "2970",
+    "text": "Kungota"
+  },{
+    "value": "2971",
+    "text": "Kuzma"
+  },{
+    "value": "2972",
+    "text": "Lenart"
+  },{
+    "value": "2973",
+    "text": "Lendava"
+  },{
+    "value": "2974",
+    "text": "Litija"
+  },{
+    "value": "2975",
+    "text": "Ljubno"
+  },{
+    "value": "2976",
+    "text": "Ljutomer"
+  },{
+    "value": "2977",
+    "text": "Log-Dragomer"
+  },{
+    "value": "2978",
+    "text": "Logatec"
+  },{
+    "value": "2979",
+    "text": "Lovrenc na Pohorju"
+  },{
+    "value": "2980",
+    "text": "Lukovica"
+  },{
+    "value": "2981",
+    "text": "Makole"
+  },{
+    "value": "2982",
+    "text": "Maribor"
+  },{
+    "value": "2983",
+    "text": "Markovci"
+  },{
+    "value": "2984",
+    "text": "Medvode"
+  },{
+    "value": "2985",
+    "text": "Mestna Občina Ljubljana"
+  },{
+    "value": "2986",
+    "text": "Mestna Občina Novo mesto"
+  },{
+    "value": "2987",
+    "text": "Metlika"
+  },{
+    "value": "2988",
+    "text": "Miren-Kostanjevica"
+  },{
+    "value": "2989",
+    "text": "Mirna"
+  },{
+    "value": "2990",
+    "text": "Mislinja"
+  },{
+    "value": "2991",
+    "text": "Mokronog-Trebelno"
+  },{
+    "value": "2992",
+    "text": "Moravske Toplice"
+  },{
+    "value": "2993",
+    "text": "Mozirje"
+  },{
+    "value": "2994",
+    "text": "Murska Sobota"
+  },{
+    "value": "2995",
+    "text": "Muta"
+  },{
+    "value": "2996",
+    "text": "Naklo"
+  },{
+    "value": "2997",
+    "text": "Nazarje"
+  },{
+    "value": "2998",
+    "text": "Nova Gorica"
+  },{
+    "value": "2999",
+    "text": "Občina Ajdovščina"
+  },{
+    "value": "3000",
+    "text": "Občina Apače"
+  },{
+    "value": "3001",
+    "text": "Občina Bled"
+  },{
+    "value": "3002",
+    "text": "Občina Bovec"
+  },{
+    "value": "3003",
+    "text": "Občina Braslovče"
+  },{
+    "value": "3004",
+    "text": "Občina Brežice"
+  },{
+    "value": "3005",
+    "text": "Občina Črenšovci"
+  },{
+    "value": "3006",
+    "text": "Občina Črna na Koroškem"
+  },{
+    "value": "3007",
+    "text": "Občina Črnomelj"
+  },{
+    "value": "3008",
+    "text": "Občina Divača"
+  },{
+    "value": "3009",
+    "text": "Občina Domžale"
+  },{
+    "value": "3010",
+    "text": "Občina Gorišnica"
+  },{
+    "value": "3011",
+    "text": "Občina Hoče-Slivnica"
+  },{
+    "value": "3012",
+    "text": "Občina Ivančna Gorica"
+  },{
+    "value": "3013",
+    "text": "Občina Juršinci"
+  },{
+    "value": "3014",
+    "text": "Občina Kidričevo"
+  },{
+    "value": "3015",
+    "text": "Občina Kobarid"
+  },{
+    "value": "3016",
+    "text": "Občina Kočevje"
+  },{
+    "value": "3017",
+    "text": "Občina Križevci"
+  },{
+    "value": "3018",
+    "text": "Občina Krško"
+  },{
+    "value": "3019",
+    "text": "Občina Laško"
+  },{
+    "value": "3020",
+    "text": "Občina Loška Dolina"
+  },{
+    "value": "3021",
+    "text": "Občina Loški Potok"
+  },{
+    "value": "3022",
+    "text": "Občina Luče"
+  },{
+    "value": "3023",
+    "text": "Občina Majšperk"
+  },{
+    "value": "3024",
+    "text": "Občina Mengeš"
+  },{
+    "value": "3025",
+    "text": "Občina Mežica"
+  },{
+    "value": "3026",
+    "text": "Občina Miklavž na Dravskem Polju"
+  },{
+    "value": "3027",
+    "text": "Občina Mirna Peč"
+  },{
+    "value": "3028",
+    "text": "Občina Moravče"
+  },{
+    "value": "3029",
+    "text": "Občina Ormož"
+  },{
+    "value": "3030",
+    "text": "Občina Podčetrtek"
+  },{
+    "value": "3031",
+    "text": "Občina Poljčane"
+  },{
+    "value": "3032",
+    "text": "Občina Rače-Fram"
+  },{
+    "value": "3033",
+    "text": "Občina Radeče"
+  },{
+    "value": "3034",
+    "text": "Občina Razkrižje"
+  },{
+    "value": "3035",
+    "text": "Občina Rečica ob Savinji"
+  },{
+    "value": "3036",
+    "text": "Občina Renče-Vogrsko"
+  },{
+    "value": "3037",
+    "text": "Občina Rogaška Slatina"
+  },{
+    "value": "3038",
+    "text": "Občina Rogašovci"
+  },{
+    "value": "3039",
+    "text": "Občina Ruše"
+  },{
+    "value": "3040",
+    "text": "Občina Šalovci"
+  },{
+    "value": "3041",
+    "text": "Občina Semič"
+  },{
+    "value": "3042",
+    "text": "Občina Šempeter-Vrtojba"
+  },{
+    "value": "3043",
+    "text": "Občina Šenčur"
+  },{
+    "value": "3044",
+    "text": "Občina Šentilj"
+  },{
+    "value": "3045",
+    "text": "Občina Šentjernej"
+  },{
+    "value": "3046",
+    "text": "Občina Šentjur"
+  },{
+    "value": "3047",
+    "text": "Občina Šentrupert"
+  },{
+    "value": "3048",
+    "text": "Občina Sežana"
+  },{
+    "value": "3049",
+    "text": "Občina Škocjan"
+  },{
+    "value": "3050",
+    "text": "Občina Škofja Loka"
+  },{
+    "value": "3051",
+    "text": "Občina Škofljica"
+  },{
+    "value": "3052",
+    "text": "Občina Šmarje pri Jelšah"
+  },{
+    "value": "3053",
+    "text": "Občina Šmarješke Toplice"
+  },{
+    "value": "3054",
+    "text": "Občina Šmartno ob Paki"
+  },{
+    "value": "3055",
+    "text": "Občina Šmartno pri Litiji"
+  },{
+    "value": "3056",
+    "text": "Občina Sodražica"
+  },{
+    "value": "3057",
+    "text": "Občina Solčava"
+  },{
+    "value": "3058",
+    "text": "Občina Šoštanj"
+  },{
+    "value": "3059",
+    "text": "Občina Središče ob Dravi"
+  },{
+    "value": "3060",
+    "text": "Občina Starše"
+  },{
+    "value": "3061",
+    "text": "Občina Štore"
+  },{
+    "value": "3062",
+    "text": "Občina Straža"
+  },{
+    "value": "3063",
+    "text": "Občina Sveti Andraž v Slovenskih Goricah"
+  },{
+    "value": "3064",
+    "text": "Občina Sveti Tomaž"
+  },{
+    "value": "3065",
+    "text": "Občina Tišina"
+  },{
+    "value": "3066",
+    "text": "Občina Tolmin"
+  },{
+    "value": "3067",
+    "text": "Občina Trnovska vas"
+  },{
+    "value": "3068",
+    "text": "Občina Tržič"
+  },{
+    "value": "3069",
+    "text": "Občina Turnišče"
+  },{
+    "value": "3070",
+    "text": "Občina Velike Lašče"
+  },{
+    "value": "3071",
+    "text": "Občina Veržej"
+  },{
+    "value": "3072",
+    "text": "Občina Žalec"
+  },{
+    "value": "3073",
+    "text": "Občina Zavrč"
+  },{
+    "value": "3074",
+    "text": "Občina Železniki"
+  },{
+    "value": "3075",
+    "text": "Občina Žetale"
+  },{
+    "value": "3076",
+    "text": "Občina Žiri"
+  },{
+    "value": "3077",
+    "text": "Občina Žirovnica"
+  },{
+    "value": "3078",
+    "text": "Občina Zreče"
+  },{
+    "value": "3079",
+    "text": "Občina Žužemberk"
+  },{
+    "value": "3080",
+    "text": "Odranci"
+  },{
+    "value": "3081",
+    "text": "Oplotnica"
+  },{
+    "value": "3082",
+    "text": "Osilnica"
+  },{
+    "value": "3083",
+    "text": "Pesnica"
+  },{
+    "value": "3084",
+    "text": "Piran"
+  },{
+    "value": "3085",
+    "text": "Pivka"
+  },{
+    "value": "3086",
+    "text": "Podlehnik"
+  },{
+    "value": "3087",
+    "text": "Podvelka"
+  },{
+    "value": "3088",
+    "text": "Polzela"
+  },{
+    "value": "3089",
+    "text": "Postojna"
+  },{
+    "value": "3090",
+    "text": "Prebold"
+  },{
+    "value": "3091",
+    "text": "Preddvor"
+  },{
+    "value": "3092",
+    "text": "Prevalje"
+  },{
+    "value": "3093",
+    "text": "Ptuj"
+  },{
+    "value": "3094",
+    "text": "Puconci"
+  },{
+    "value": "3095",
+    "text": "Radenci"
+  },{
+    "value": "3096",
+    "text": "Radlje ob Dravi"
+  },{
+    "value": "3097",
+    "text": "Radovljica"
+  },{
+    "value": "3098",
+    "text": "Ravne-Prevalje"
+  },{
+    "value": "3099",
+    "text": "Ribnica"
+  },{
+    "value": "3100",
+    "text": "Ribnica na Pohorju"
+  },{
+    "value": "3101",
+    "text": "Rogatec"
+  },{
+    "value": "3102",
+    "text": "Selnica ob Dravi"
+  },{
+    "value": "3103",
+    "text": "Sevnica"
+  },{
+    "value": "3104",
+    "text": "Slovenj Gradec"
+  },{
+    "value": "3105",
+    "text": "Slovenska Bistrica"
+  },{
+    "value": "3106",
+    "text": "Slovenske Konjice"
+  },{
+    "value": "3107",
+    "text": "Sveta Ana"
+  },{
+    "value": "3108",
+    "text": "Sveta Trojica v Slovenskih Goricah"
+  },{
+    "value": "3109",
+    "text": "Sveti Jurij"
+  },{
+    "value": "3110",
+    "text": "Sveti Jurij v Slovenskih Goricah"
+  },{
+    "value": "3111",
+    "text": "Tabor"
+  },{
+    "value": "3112",
+    "text": "Trbovlje"
+  },{
+    "value": "3113",
+    "text": "Trebnje"
+  },{
+    "value": "3114",
+    "text": "Trzin"
+  },{
+    "value": "3115",
+    "text": "Velenje"
+  },{
+    "value": "3116",
+    "text": "Velika Polana"
+  },{
+    "value": "3117",
+    "text": "Videm"
+  },{
+    "value": "3118",
+    "text": "Vipava"
+  },{
+    "value": "3119",
+    "text": "Vitanje"
+  },{
+    "value": "3120",
+    "text": "Vodice"
+  },{
+    "value": "3121",
+    "text": "Vojnik"
+  },{
+    "value": "3122",
+    "text": "Vransko"
+  },{
+    "value": "3123",
+    "text": "Vrhnika"
+  },{
+    "value": "3124",
+    "text": "Vuzenica"
+  },{
+    "value": "3125",
+    "text": "Zagorje ob Savi"
+  }
+]

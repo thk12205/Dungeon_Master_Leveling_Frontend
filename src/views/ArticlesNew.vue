@@ -3,6 +3,9 @@
     <form v-on:submit.prevent="createArticle()">
       <!-- <img v-if="status" :src="`https://http.cat/${status}`" alt="" /> -->
       <h1>New Article</h1>
+
+      <img :src="article.img_url" style="height:300px;max-width:500px" alt="" />
+
       <ul>
         <li class="text-danger" v-for="error in errors" v-bind:key="error">
           {{ error }}
@@ -31,7 +34,7 @@
         <option value="2">DEX - Improvization and Organization </option>
         <option value="3">CON - World Building and Plot</option>
         <option value="4">INT - Rules, Gold, and Balance</option>
-        <option value="5">WIS - Player Management</option>
+        <option value="5">WIS - Player and Table Management</option>
         <option value="6">CHA - Characters: The Good, The Bad, The Ugly</option>
       </select>
 

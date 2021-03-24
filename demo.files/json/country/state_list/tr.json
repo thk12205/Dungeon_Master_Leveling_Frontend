@@ -1,0 +1,246 @@
+[
+  {
+    "value": "3487",
+    "text": "Adana"
+  },{
+    "value": "3488",
+    "text": "Adıyaman"
+  },{
+    "value": "3489",
+    "text": "Afyonkarahisar"
+  },{
+    "value": "3490",
+    "text": "Ağrı"
+  },{
+    "value": "3491",
+    "text": "Aksaray"
+  },{
+    "value": "3492",
+    "text": "Amasya"
+  },{
+    "value": "3493",
+    "text": "Ankara"
+  },{
+    "value": "3494",
+    "text": "Antalya"
+  },{
+    "value": "3495",
+    "text": "Ardahan"
+  },{
+    "value": "3496",
+    "text": "Artvin"
+  },{
+    "value": "3497",
+    "text": "Aydın"
+  },{
+    "value": "3498",
+    "text": "Balıkesir"
+  },{
+    "value": "3499",
+    "text": "Bartın"
+  },{
+    "value": "3500",
+    "text": "Batman"
+  },{
+    "value": "3501",
+    "text": "Bayburt"
+  },{
+    "value": "3502",
+    "text": "Bilecik"
+  },{
+    "value": "3503",
+    "text": "Bingöl"
+  },{
+    "value": "3504",
+    "text": "Bitlis"
+  },{
+    "value": "3505",
+    "text": "Bolu"
+  },{
+    "value": "3506",
+    "text": "Burdur"
+  },{
+    "value": "3507",
+    "text": "Bursa"
+  },{
+    "value": "3508",
+    "text": "Çanakkale"
+  },{
+    "value": "3509",
+    "text": "Çankırı"
+  },{
+    "value": "3510",
+    "text": "Çorum"
+  },{
+    "value": "3511",
+    "text": "Denizli"
+  },{
+    "value": "3512",
+    "text": "Diyarbakır"
+  },{
+    "value": "3513",
+    "text": "Düzce"
+  },{
+    "value": "3514",
+    "text": "Edirne"
+  },{
+    "value": "3515",
+    "text": "Elâzığ"
+  },{
+    "value": "3516",
+    "text": "Erzincan"
+  },{
+    "value": "3517",
+    "text": "Erzurum"
+  },{
+    "value": "3518",
+    "text": "Eskişehir"
+  },{
+    "value": "3519",
+    "text": "Gaziantep"
+  },{
+    "value": "3520",
+    "text": "Giresun"
+  },{
+    "value": "3521",
+    "text": "Gümüşhane"
+  },{
+    "value": "3522",
+    "text": "Hakkari"
+  },{
+    "value": "3523",
+    "text": "Hatay"
+  },{
+    "value": "3524",
+    "text": "Iğdır"
+  },{
+    "value": "3525",
+    "text": "Isparta"
+  },{
+    "value": "3526",
+    "text": "İstanbul"
+  },{
+    "value": "3527",
+    "text": "İzmir"
+  },{
+    "value": "3528",
+    "text": "Kahramanmaraş"
+  },{
+    "value": "3529",
+    "text": "Karabük"
+  },{
+    "value": "3530",
+    "text": "Karaman"
+  },{
+    "value": "3531",
+    "text": "Kars"
+  },{
+    "value": "3532",
+    "text": "Kastamonu"
+  },{
+    "value": "3533",
+    "text": "Kayseri"
+  },{
+    "value": "3534",
+    "text": "Kilis"
+  },{
+    "value": "3535",
+    "text": "Kırıkkale"
+  },{
+    "value": "3536",
+    "text": "Kırklareli"
+  },{
+    "value": "3537",
+    "text": "Kırşehir"
+  },{
+    "value": "3538",
+    "text": "Kocaeli"
+  },{
+    "value": "3539",
+    "text": "Konya"
+  },{
+    "value": "3540",
+    "text": "Kütahya"
+  },{
+    "value": "3541",
+    "text": "Malatya"
+  },{
+    "value": "3542",
+    "text": "Manisa"
+  },{
+    "value": "3543",
+    "text": "Mardin"
+  },{
+    "value": "3544",
+    "text": "Mersin"
+  },{
+    "value": "3545",
+    "text": "Muğla"
+  },{
+    "value": "3546",
+    "text": "Muş"
+  },{
+    "value": "3547",
+    "text": "Nevşehir"
+  },{
+    "value": "3548",
+    "text": "Niğde"
+  },{
+    "value": "3549",
+    "text": "Ordu"
+  },{
+    "value": "3550",
+    "text": "Osmaniye"
+  },{
+    "value": "3551",
+    "text": "Rize"
+  },{
+    "value": "3552",
+    "text": "Sakarya"
+  },{
+    "value": "3553",
+    "text": "Samsun"
+  },{
+    "value": "3554",
+    "text": "Şanlıurfa"
+  },{
+    "value": "3555",
+    "text": "Siirt"
+  },{
+    "value": "3556",
+    "text": "Sinop"
+  },{
+    "value": "3557",
+    "text": "Şırnak"
+  },{
+    "value": "3558",
+    "text": "Sivas"
+  },{
+    "value": "3559",
+    "text": "Tekirdağ"
+  },{
+    "value": "3560",
+    "text": "Tokat"
+  },{
+    "value": "3561",
+    "text": "Trabzon"
+  },{
+    "value": "3562",
+    "text": "Tunceli"
+  },{
+    "value": "3563",
+    "text": "Uşak"
+  },{
+    "value": "3564",
+    "text": "Van"
+  },{
+    "value": "3565",
+    "text": "Yalova"
+  },{
+    "value": "3566",
+    "text": "Yozgat"
+  },{
+    "value": "3567",
+    "text": "Zonguldak"
+  }
+]

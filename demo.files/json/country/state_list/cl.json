@@ -1,0 +1,51 @@
+[
+  {
+    "value": "618",
+    "text": "Región Aysén"
+  },{
+    "value": "619",
+    "text": "Región de Antofagasta"
+  },{
+    "value": "620",
+    "text": "Región de Arica y Parinacota"
+  },{
+    "value": "621",
+    "text": "Región de Atacama"
+  },{
+    "value": "622",
+    "text": "Región de Coquimbo"
+  },{
+    "value": "623",
+    "text": "Región de la Araucanía"
+  },{
+    "value": "624",
+    "text": "Región de los Lagos"
+  },{
+    "value": "625",
+    "text": "Región de los Ríos"
+  },{
+    "value": "626",
+    "text": "Región de Magallanes y Antártica Chilena"
+  },{
+    "value": "627",
+    "text": "Región de Ñuble"
+  },{
+    "value": "628",
+    "text": "Región de Tarapacá"
+  },{
+    "value": "629",
+    "text": "Región de Valparaíso"
+  },{
+    "value": "630",
+    "text": "Región del Biobío"
+  },{
+    "value": "631",
+    "text": "Región del Libertador General Bernardo O’Higgins"
+  },{
+    "value": "632",
+    "text": "Región del Maule"
+  },{
+    "value": "633",
+    "text": "Región Metropolitana"
+  }
+]

@@ -76,7 +76,6 @@
 
     <div v-for="comment in comments" v-bind:key="comment.id">
       id: {{ comment.id }} <br />
-      <!-- http://localhost:8080/users/1 -->
       <router-link :to="`/users/${comment.user_id}`">
         img:
         <img
@@ -93,8 +92,7 @@
 
       comment: {{ comment.body }} <br />
       user_id: {{ comment.user_id }} <br />
-      created: {{ comment.created_at }} <br />
-      <!-- relativeDate(comment.created_at) -->
+      created: {{ relativeDate(comment.created_at) }} <br />
       <button
         v-if="$parent.getUserID() == comment.user_id"
         v-on:click="destroyComment(comment)"
@@ -111,7 +109,7 @@
 
 <script>
 import axios from "axios";
-// import moment from "moment";
+import moment from "moment";
 
 export default {
   data: function() {
@@ -204,9 +202,9 @@ export default {
       console.log(youtubeId.substring(2));
       return youtubeId.substring(2);
     },
-    // relativeDate: function(date) {
-    //   return moment(date).fromNow();
-    // },
+    relativeDate: function(date) {
+      return moment(date).fromNow();
+    },
   },
 };
 </script>

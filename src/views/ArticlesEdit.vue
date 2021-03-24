@@ -31,18 +31,40 @@
         <label>source:</label>
         <input type="text" class="form-control" v-model="article.source" />
       </div>
-      <div class="form-group">
-        <label>category_id(1-6: STR,CON,DEX,INT,WIS,CHA):</label>
-        <input type="text" class="form-control" v-model="article.category_id" />
-      </div>
+      <label for="category">category:</label>
+      <select name="category" id="category" v-model="article.category_id">
+        <option value="1">STR - Monsters, Combat, Challenges</option>
+        <option value="2">DEX - Improvization and Organization </option>
+        <option value="3">CON - World Building and Plot</option>
+        <option value="4">INT - Rules, Gold, and Balance</option>
+        <option value="5">WIS - Player Management</option>
+        <option value="6">CHA - Characters: The Good, The Bad, The Ugly</option>
+      </select>
       <div class="form-group">
         <label>body:</label>
         <input type="text" class="form-control" v-model="article.body" />
       </div>
+
       <div class="form-group">
         <label>video(true/false):</label>
-        <input type="text" class="form-control" v-model="article.video" />
+        <input
+          type="radio"
+          id="yes"
+          name="video"
+          value="true"
+          v-model="article.video"
+        />
+        <label for="yes">Yes</label>
+        <input
+          type="radio"
+          id="no"
+          name="video"
+          value="false"
+          v-model="article.video"
+        />
+        <label for="no">No</label><br />
       </div>
+
       <input
         v-if="article.creator_id == $parent.getUserID()"
         type="submit"
@@ -96,7 +118,7 @@ export default {
         .then((response) => {
           console.log("AXIOS SUCCESS");
           console.log(response.data);
-          this.$router.push("/");
+          this.$router.push(`/articles/${this.article.id}`);
         })
         .catch((error) => {
           console.log("AXIOS FAIL");
