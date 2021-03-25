@@ -42,7 +42,7 @@
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="Phone number"
+                      placeholder="source here"
                       v-model="article.source"
                     />
                     <label for="contact-phone">Source</label>
@@ -53,8 +53,8 @@
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="Phone number"
-                      v-model="article.image"
+                      placeholder="img url here"
+                      v-model="article.img_url"
                     />
                     <label for="contact-phone">Image URL</label>
                   </div>
@@ -64,7 +64,7 @@
               <div class="form-floating mb-3">
                 <textarea
                   class="form-control"
-                  placeholder="Message"
+                  placeholder="Your Article Here"
                   style="height: 100px"
                   v-model="article.body"
                 ></textarea>
@@ -171,7 +171,7 @@ export default {
     updateArticle: function() {
       var params = {
         title: this.article.title,
-        image: this.article.image,
+        image: this.article.img_url,
         source: this.article.source,
         category_id: this.article.category_id,
         body: this.article.body,
@@ -182,6 +182,10 @@ export default {
         .then((response) => {
           console.log("AXIOS SUCCESS");
           console.log(response.data);
+          console.log("Update Article = ");
+          console.log(response.data);
+          console.log("article.img_url sent = ");
+          console.log(response.data.img_url);
           this.$router.push(`/articles/${this.article.id}`);
         })
         .catch((error) => {

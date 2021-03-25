@@ -169,7 +169,7 @@ export default {
     createArticle: function() {
       var params = {
         title: this.title,
-        image: this.image,
+        img_url: this.image,
         source: this.source,
         category_id: this.category_id,
         body: this.body,

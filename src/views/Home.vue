@@ -81,8 +81,8 @@
         data-embla='{
             "slidesToScroll":   1,
             "loop":             true,
-            "dragFree":         false,
-            "autoPlay":         4000
+            "dragFree":         true,
+            "autoPlay":         2000
       }'
       >
         <div class="embla__viewport">
@@ -90,21 +90,25 @@
             <!-- vh-100, vh-75, vh-50, vh-25 -->
 
             <a
-              href="#!"
+              href="/"
               class="embla__slide d-flex flex-column align-items-center justify-content-start text-white w-100 h-100 px-5 py-7 overlay-dark overlay-opacity-5 bg-cover"
-              style="background-image: url(/../../public/assets/demo.files/images/unsplash/product_various/william-bayreuther-pM4fy8F_FHo-unsplash.jpg)"
+              style="background-image: url(https://wallpapercave.com/wp/wp2227193.jpg)"
             >
               <div class="d-inline-block text-start text-shadow-lg">
                 <h1 class="display-1 fw-bold mb-0">
                   Dungeon Master Leveling Guide
                 </h1>
+                <p class="text-end">
+                  HONE YOUR CRAFT IN THE
+                  <span class="text-warning">ART OF DND</span>
+                </p>
               </div>
             </a>
 
             <a
-              href="#!"
+              href="/"
               class="embla__slide d-flex flex-column align-items-center justify-content-center text-white w-100 h-100 px-5 py-7 overlay-dark overlay-opacity-5 bg-cover"
-              style="background-image: url(/../../public/assets/demo.files/images/unsplash/product_various/john-soo-ZGL0DS7Z5Mw-unsplash.jpg)"
+              style="background-image: url(https://wallpapercave.com/wp/wp2227193.jpg)"
             >
               <div class="d-inline-block text-start text-shadow-lg">
                 <h2 class="display-1 fw-bold mb-0">
@@ -279,71 +283,6 @@
         </div>
       </div>
     </section>
-
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        jarallax(document.querySelectorAll(".jarallax"));
-      });
-    </script> -->
-
-    <!-- <h1>Dungeon Master Leveling!!</h1> -->
-
-    <!-- <div v-for="category in categories" v-bind:key="category.id">
-      <h4>{{ category.name }}</h4> -->
-    <!-- CHANGE: put button into img later -->
-
-    <!-- <router-link :to="`/categories/${category.name}`"
-        ><button>
-          Link to Category Page for {{ category.name }}
-        </button></router-link
-      >
-      <img :src="category.img_url" alt="" />
-      <br />
-      <h4>===========================</h4>
-      <div v-for="article in articles" v-bind:key="article.id">
-        <div v-if="article.category_id == category.id">
-          <h4>{{ article.title }}</h4> -->
-    <!-- CHANGE: put button into img later -->
-    <!-- <router-link :to="`/articles/${article.id}`"
-            ><img
-              :src="article.img_url"
-              style="height:300px;max-width:500px"
-              alt=""
-          /></router-link> -->
-    <br />
-    <!-- <a :href="article.url">
-            <img
-              :src="article.img_url"
-              style="height:300px;max-width:500px"
-              alt=""
-            />
-          </a>
-          <br /> -->
-    <!-- source: {{ article.source }} <br />
-          upvotes_total: {{ article.upvotes_total }} <br /> -->
-    <!-- CHANGE: put button into img later -->
-    <!-- <img
-            src="https://icon-library.com/images/small-thumbs-up-icon/small-thumbs-up-icon-16.jpg"
-            alt=""
-          /> -->
-    <!-- <div v-if="$parent.loggedIn()">
-            <div v-if="!article.upvoted">
-              <button v-on:click="createUpvote(article)">
-                Thumbs Up (see-through)
-              </button>
-            </div>
-            <div v-if="article.upvoted">
-              <button v-on:click="destroyUpvote(article)">
-                Thumbs Down (opaque)
-              </button>
-            </div>
-          </div>
-
-          <br />
-          <br />
-        </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
   </div>
 </template>
 
