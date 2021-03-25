@@ -183,54 +183,6 @@
         </div>
       </div>
     </section>
-
-    <h1>{{ category.name }}</h1>
-    <h3>{{ category.description }}</h3>
-
-    <h4>Order By:</h4>
-    <button
-      v-on:click="
-        orderByFilter = 'upvotes_total';
-        reverseFilter = -1;
-      "
-    >
-      Score
-    </button>
-    <button
-      v-on:click="
-        orderByFilter = 'title';
-        reverseFilter = 1;
-      "
-    >
-      Title
-    </button>
-    <button
-      v-on:click="
-        orderByFilter = 'source';
-        reverseFilter = 1;
-      "
-    >
-      Sources
-    </button>
-    <button v-on:click="reverseFilterToggle()">
-      Reverse Order
-    </button>
-
-    <br />
-    Title Filter:
-    <input
-      class="form-control"
-      v-model="titleFilter"
-      placeholder="Search by Title"
-    />
-    <br />
-    Source Filter:
-    <input
-      class="form-control"
-      v-model="sourceFilter"
-      placeholder="Search by Source"
-    />
-    <br />
   </div>
 </template>
 

@@ -143,57 +143,6 @@
         </svg>
       </div>
     </div>
-
-    <h1>hello</h1>
-    <ul>
-      <li class="text-danger" v-for="error in errors" v-bind:key="error">
-        {{ error }}
-      </li>
-    </ul>
-    <form v-on:submit.prevent="updateUser()">
-      <h1>Edit Profile Page</h1>
-
-      img url: <img :src="user.img_url" alt="" />
-
-      <ul>
-        <li class="text-danger" v-for="error in errors" v-bind:key="error">
-          {{ error }}
-        </li>
-      </ul>
-      <div class="form-group">
-        <label>Name:</label>
-        <input type="text" class="form-control" v-model="user.username" />
-      </div>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="user.email" />
-      </div>
-      <div class="form-group">
-        <label>Image URL:</label>
-        <input type="img_url" class="form-control" v-model="user.img_url" />
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password" />
-      </div>
-      <div class="form-group">
-        <label>Password confirmation:</label>
-        <input
-          type="password"
-          class="form-control"
-          v-model="passwordConfirmation"
-        />
-      </div>
-      <input
-        type="submit"
-        v-if="user.id == $parent.getUserID()"
-        class="btn btn-primary"
-        value="Submit"
-      />
-    </form>
-    <button v-if="user.id == $parent.getUserID()" v-on:click="destroyUser()">
-      Delete Account
-    </button>
   </div>
 </template>
 

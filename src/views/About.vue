@@ -10,5 +10,11 @@
     <img src="https://i.makeagif.com/media/11-14-2014/vO7FLC.gif" alt="" />
     <br />
     <br />
+
+    <!-- <ul>
+      <li class="text-danger" v-for="error in errors" v-bind:key="error">
+        {{ error }}
+      </li>
+    </ul> -->
   </div>
 </template>

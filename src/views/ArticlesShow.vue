@@ -250,20 +250,22 @@
             <div class="card p-sm-3 h-100 transition-top-hover shadow">
               <div class="card-body">
                 <div class="d-inline-grid gap-auto-3 mb-3">
-                  <div
-                    class="avatar avatar-lg rounded-circle"
-                    v-bind:style="
-                      `background-image:url(${comment.user.img_url})`
-                    "
-                  ></div>
+                  <a :href="`/users/${comment.user_id}/`">
+                    <div
+                      class="avatar avatar-lg rounded-circle"
+                      v-bind:style="
+                        `background-image:url(${comment.user.img_url})`
+                      "
+                    ></div>
+                  </a>
+
                   <span class="text-muted">{{
                     relativeDate(comment.created_at)
                   }}</span>
                 </div>
 
-                <h4 class="h5 fw-normal">
-                  {{ comment.user.username }}'s notes:
-                </h4>
+                <h4>{{ comment.user.username }}'s notes:</h4>
+
                 <p class="text-muted">
                   {{ comment.body }}
                 </p>
@@ -294,111 +296,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Old Code -->
-
-    <h4>{{ article.title }}</h4>
-    <!-- CHANGE: put button into img later -->
-    <a :href="article.url" target="_blank">
-      <img
-        v-if="!article.video"
-        :src="article.img_url"
-        style="height:300px;max-width:500px"
-        alt=""
-      />
-      <iframe
-        v-if="article.video"
-        width="560"
-        height="315"
-        :src="`https://www.youtube.com/embed/${extractYoutubeId(article.url)}`"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </a>
-    <br />
-    source: {{ article.source }} <br />
-    upvotes_total: {{ article.upvotes_total }} <br />
-    body: {{ article.body }} <br />
-    video: {{ article.video }} <br />
-
-    <!-- CHANGE: put button into img later -->
-    <!-- <img
-            src="https://icon-library.com/images/small-thumbs-up-icon/small-thumbs-up-icon-16.jpg"
-            alt=""
-          /> -->
-    <div v-if="$parent.loggedIn()">
-      <div v-if="!article.upvoted">
-        <button v-on:click="createUpvote(article)">
-          Thumbs Up (see-through)
-        </button>
-      </div>
-      <div v-if="article.upvoted">
-        <button v-on:click="destroyUpvote(article)">
-          Thumbs Down (opaque)
-        </button>
-      </div>
-    </div>
-
-    <br />
-
-    <router-link
-      v-if="article.creator_id == $parent.getUserID()"
-      :to="`/articles/${article.id}/edit`"
-    >
-      <button>Edit Article</button>
-    </router-link>
-
-    <br />
-
-    <h3>Comments Section</h3>
-
-    <form v-if="$parent.loggedIn()" v-on:submit.prevent="createComment()">
-      <h1>Add Comment</h1>
-
-      <ul>
-        <li class="text-danger" v-for="error in errors" v-bind:key="error">
-          {{ error }}
-        </li>
-      </ul>
-      <div class="form-group">
-        (user.img_url here)
-        <label>Comment:</label>
-        <input type="text" class="form-control" v-model="body" />
-      </div>
-      <input type="submit" class="btn btn-primary" value="Submit" />
-    </form>
-    <br />
-
-    <div v-for="comment in comments" v-bind:key="comment.id">
-      id: {{ comment.id }} <br />
-      <router-link :to="`/users/${comment.user_id}`">
-        img:
-        <img
-          :src="comment.user.img_url"
-          style="height:100px;max-width:100px"
-          alt=""
-        />
-      </router-link>
-
-      <router-link :to="`/users/${comment.user_id}`">
-        username: {{ comment.user.username }}
-      </router-link>
-      <br />
-
-      comment: {{ comment.body }} <br />
-      user_id: {{ comment.user_id }} <br />
-      created: {{ relativeDate(comment.created_at) }} <br />
-      <button
-        v-if="$parent.getUserID() == comment.user_id"
-        v-on:click="destroyComment(comment)"
-      >
-        Delete
-      </button>
-      <br />
-      <br />
-    </div>
   </div>
 </template>
 
