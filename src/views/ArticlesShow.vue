@@ -122,8 +122,8 @@
 
         <iframe
           v-if="article.video"
-          width="1120"
-          height="630"
+          width="1000"
+          height="563"
           :src="
             `https://www.youtube.com/embed/${extractYoutubeId(article.url)}`
           "
@@ -469,6 +469,7 @@ export default {
           console.log("Comment = ");
           console.log(response.data);
           this.comments.unshift(response.data);
+          this.body = "";
         })
         .catch((error) => {
           this.errors = error.response.data.errors;

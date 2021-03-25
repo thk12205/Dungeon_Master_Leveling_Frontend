@@ -44,8 +44,9 @@
                     Edit Profile
                   </button>
                 </router-link>
-
-                <h4>Articles Read</h4>
+                <br />
+                <br />
+                <h4>Categories</h4>
 
                 <button
                   class="btn btn-primary pointer-events-none"

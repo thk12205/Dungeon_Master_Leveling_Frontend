@@ -6,7 +6,7 @@
     >
       <div class="container">
         <!-- brand / logo -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/">
           <img
             src="../demo.files/logo/logo_dark.png"
             width="136"
