@@ -65,11 +65,11 @@
 
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link px-3" href="../">Home</a>
+              <a class="nav-link px-3" href="/">Home</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link px-3" href="../about/">About</a>
+              <a class="nav-link px-3" href="/about/">About</a>
             </li>
 
             <li class="nav-item dropdown dropdown-hover">
@@ -89,18 +89,18 @@
                 aria-labelledby="navbarLanding"
               >
                 <li v-if="loggedIn()">
-                  <a class="dropdown-item" href="../profile/">My Profile</a>
+                  <a class="dropdown-item" href="/profile/">My Profile</a>
                 </li>
                 <li v-if="!loggedIn()">
-                  <a class="dropdown-item" href="../login/">Login</a>
+                  <a class="dropdown-item" href="/login/">Login</a>
                 </li>
                 <li v-if="!loggedIn()" class="dropdown-divider"></li>
                 <li v-if="!loggedIn()">
-                  <a class="dropdown-item" href="../signup/">Sign Up</a>
+                  <a class="dropdown-item" href="/signup/">Sign Up</a>
                 </li>
                 <li v-if="loggedIn()" class="dropdown-divider"></li>
                 <li v-if="loggedIn()">
-                  <a class="dropdown-item" href="../logout/">Logout</a>
+                  <a class="dropdown-item" href="/logout/">Logout</a>
                 </li>
               </ul>
             </li>
@@ -122,37 +122,37 @@
                 aria-labelledby="navbarBlog"
               >
                 <li>
-                  <a class="dropdown-item" href="../categories/str"
+                  <a class="dropdown-item" href="../categories/STR"
                     >STR - Monsters, Combat, Challenges
                   </a>
                 </li>
                 <li class="dropdown-divider"></li>
                 <li>
-                  <a class="dropdown-item" href="../categories/dex"
+                  <a class="dropdown-item" href="../categories/DEX"
                     >DEX - Improvization and Organization</a
                   >
                 </li>
                 <li class="dropdown-divider"></li>
                 <li>
-                  <a class="dropdown-item" href="../categories/con"
+                  <a class="dropdown-item" href="../categories/CON"
                     >CON - World Building and Plot</a
                   >
                 </li>
                 <li class="dropdown-divider"></li>
                 <li>
-                  <a class="dropdown-item" href="../categories/int"
+                  <a class="dropdown-item" href="../categories/INT"
                     >INT - Rules, Gold, and Balance</a
                   >
                 </li>
                 <li class="dropdown-divider"></li>
                 <li>
-                  <a class="dropdown-item" href="../categories/wis"
+                  <a class="dropdown-item" href="../categories/WIS"
                     >WIS - Player and Table Management</a
                   >
                 </li>
                 <li class="dropdown-divider"></li>
                 <li>
-                  <a class="dropdown-item" href="../categories/cha"
+                  <a class="dropdown-item" href="../categories/CHA"
                     >CHA - Characters: The Good, The Bad, The Ugly</a
                   >
                 </li>
